@@ -1,0 +1,198 @@
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { useInView } from 'framer-motion';
+import { useRef } from 'react';
+import { Send, CheckCircle, User, Mail, Users, Heart } from 'lucide-react';
+
+const ContactForm = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [formData, setFormData] = useState({
+    nombre: '',
+    email: '',
+    tipoEntrada: '',
+    interesAuspicio: '',
+    mensaje: ''
+  });
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Simulate form submission
+    setTimeout(() => {
+      setIsSubmitted(true);
+    }, 1000);
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  if (isSubmitted) {
+    return (
+      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+            className="max-w-2xl mx-auto text-center"
+          >
+            <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-12 border border-green-500/30">
+              <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <CheckCircle className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="text-3xl font-bold text-white mb-4">¡Mensaje Enviado!</h3>
+              <p className="text-gray-300 mb-6">
+                Gracias por su interés en "Yo No Me Fui". Nuestro equipo se comunicará 
+                con usted a la brevedad para proporcionarle más detalles sobre el evento 
+                y las opciones disponibles.
+              </p>
+              <button
+                onClick={() => setIsSubmitted(false)}
+                className="bg-gradient-to-r from-yellow-400 to-red-600 text-black px-6 py-3 rounded-lg font-semibold hover:from-yellow-300 hover:to-red-500 transition-all duration-300"
+              >
+                Enviar Otro Mensaje
+              </button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+    );
+  }
+
+  return (
+    <section className="py-20 bg-gradient-to-b from-gray-900 to-black relative" ref={ref}>
+      <div className="container mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Reservaciones y <span className="text-yellow-400">Auspicio</span>
+          </h2>
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            Complete el formulario para reservar sus entradas o solicitar detalles 
+            sobre las oportunidades de auspicio
+          </p>
+        </motion.div>
+
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 md:p-12 border border-gray-700 shadow-2xl"
+          >
+            <form onSubmit={handleSubmit} className="space-y-8">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-white font-semibold flex items-center gap-2">
+                    <User className="w-4 h-4 text-yellow-400" />
+                    Nombre Completo *
+                  </label>
+                  <input
+                    type="text"
+                    name="nombre"
+                    value={formData.nombre}
+                    onChange={handleChange}
+                    required
+                    className="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 focus:outline-none transition-all duration-300"
+                    placeholder="Su nombre completo"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-white font-semibold flex items-center gap-2">
+                    <Mail className="w-4 h-4 text-yellow-400" />
+                    Correo Electrónico *
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 focus:outline-none transition-all duration-300"
+                    placeholder="su@email.com"
+                  />
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-white font-semibold flex items-center gap-2">
+                    <Users className="w-4 h-4 text-yellow-400" />
+                    Tipo de Entrada
+                  </label>
+                  <select
+                    name="tipoEntrada"
+                    value={formData.tipoEntrada}
+                    onChange={handleChange}
+                    className="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 focus:outline-none transition-all duration-300"
+                  >
+                    <option value="">Seleccione una opción</option>
+                    <option value="individual">Entrada Individual</option>
+                    <option value="grupo">Entrada para Grupos (5+)</option>
+                    <option value="consultar">Necesito más información</option>
+                  </select>
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-white font-semibold flex items-center gap-2">
+                    <Heart className="w-4 h-4 text-yellow-400" />
+                    Interés en Auspicio
+                  </label>
+                  <select
+                    name="interesAuspicio"
+                    value={formData.interesAuspicio}
+                    onChange={handleChange}
+                    className="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 focus:outline-none transition-all duration-300"
+                  >
+                    <option value="">Seleccione una opción</option>
+                    <option value="visionario">Auspiciador Visionario</option>
+                    <option value="transformacional">Auspiciador Transformador</option>
+                    <option value="comprometido">Auspiciador Comprometido</option>
+                    <option value="solidario">Auspiciador Solidario</option>
+                    <option value="no-interesado">No estoy interesado</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-white font-semibold">
+                  Mensaje Adicional
+                </label>
+                <textarea
+                  name="mensaje"
+                  value={formData.mensaje}
+                  onChange={handleChange}
+                  rows={4}
+                  className="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 focus:outline-none transition-all duration-300 resize-none"
+                  placeholder="Cuéntenos más sobre su interés o preguntas específicas..."
+                ></textarea>
+              </div>
+
+              <div className="text-center">
+                <button
+                  type="submit"
+                  className="group bg-gradient-to-r from-yellow-400 to-red-600 text-black px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center gap-3 mx-auto"
+                >
+                  <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  Enviar Solicitud
+                </button>
+              </div>
+            </form>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ContactForm;
