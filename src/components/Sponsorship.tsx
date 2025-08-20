@@ -18,9 +18,9 @@ const Sponsorship = () => {
       description: 'Liderazgo transformacional en la causa',
       features: [
         'Logo prominente en todos los materiales',
-        'Reconocimiento principal durante la gala',
+        'Agradecimiento principal en stage durante la gala',
         'Mesa VIP para ejecutivos',
-        'Entrevistas en medios',
+        'Entrevistas en alfombra roja',
         'Presencia en redes sociales'
       ]
     },
@@ -125,7 +125,7 @@ const Sponsorship = () => {
                       {tier.description}
                     </p>
                     
-                    <div className="space-y-3">
+                    <div className="space-y-3 mb-6">
                       {tier.features.map((feature, featureIndex) => (
                         <div key={featureIndex} className="flex items-start gap-3">
                           <div className={`w-2 h-2 bg-gradient-to-r ${tier.color} rounded-full flex-shrink-0 mt-2`}></div>
@@ -133,6 +133,15 @@ const Sponsorship = () => {
                         </div>
                       ))}
                     </div>
+                    
+                    <a
+                      href="https://www.zeffy.com/en-US/ticketing/yo-no-me-fui-estreno-oficial-evento-fundraiser"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`block w-full bg-gradient-to-r ${tier.color} text-white text-center py-3 px-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg group-hover:shadow-xl`}
+                    >
+                      Obtener Paquete
+                    </a>
                   </div>
                 </div>
               </motion.div>

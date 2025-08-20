@@ -5,21 +5,14 @@ import { Play, Calendar } from 'lucide-react';
 const Hero = () => {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Video Background */}
+      {/* Movie Poster Background */}
       <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-cover"
-        >
-          <source
-            src="https://player.vimeo.com/external/371433846.sd.mp4?s=236da2f3c0fd273d2c6d9a064f3ae35579b2bbdf&profile_id=139&oauth2_token_id=57447761"
-            type="video/mp4"
-          />
-        </video>
-        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+        <img
+          src="/src/assets/logos/Hero1.png"
+          alt="Yo No Me Fui Movie Poster"
+          className="w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-70"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
       </div>
 
@@ -53,12 +46,17 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 1.2 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <button className="group bg-gradient-to-r from-red-700 to-red-800 hover:from-red-600 hover:to-red-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+          <a
+            href="https://www.zeffy.com/en-US/ticketing/yo-no-me-fui-estreno-oficial-evento-fundraiser"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group bg-gradient-to-r from-red-700 to-red-800 hover:from-red-600 hover:to-red-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+          >
             <span className="flex items-center justify-center gap-2">
               <Calendar className="w-5 h-5" />
               Reservar Mi Lugar
             </span>
-          </button>
+          </a>
           <button className="group border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105">
             <span className="flex items-center justify-center gap-2">
               <Play className="w-5 h-5" />

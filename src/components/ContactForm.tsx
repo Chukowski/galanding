@@ -119,7 +119,7 @@ const ContactForm = () => {
                     onChange={handleChange}
                     required
                     className="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 focus:outline-none transition-all duration-300"
-                    placeholder="su@email.com"
+                    placeholder="aic@aiccapellania.com"
                   />
                 </div>
               </div>
