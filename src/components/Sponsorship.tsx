@@ -10,63 +10,54 @@ const Sponsorship = () => {
 
   const sponsorshipTiers = [
     {
-      id: 'visionario',
-      icon: Crown,
-      title: 'Auspiciador Visionario',
-      color: 'from-yellow-400 to-yellow-600',
-      bgColor: 'from-yellow-400/20 to-yellow-600/20',
-      description: 'Liderazgo transformacional en la causa',
-      features: [
-        'Logo prominente en todos los materiales',
-        'Agradecimiento principal en stage durante la gala',
-        'Mesa VIP para ejecutivos',
-        'Entrevistas en alfombra roja',
-        'Presencia en redes sociales'
-      ]
-    },
-    {
       id: 'transformacional',
       icon: Star,
-      title: 'Auspiciador Transformador',
+      title: 'Transformative Sponsor',
+      price: '$4,500',
       color: 'from-red-500 to-red-700',
       bgColor: 'from-red-500/20 to-red-700/20',
-      description: 'Impacto significativo en la comunidad',
+      description: 'Significant impact on the community',
       features: [
-        'Logo en materiales principales',
-        'Reconocimiento durante el evento',
-        'Asientos preferenciales',
-        'Mención en comunicados',
-        'Certificado de participación'
+        'Prominent logo on all materials',
+        'Special mention during the event',
+        '2 VIP seats',
+        'Mention in press releases',
+        'Interview at the event',
+        'Social media presence',
+        'Promotional materials'
       ]
     },
     {
       id: 'comprometido',
       icon: Heart,
-      title: 'Auspiciador Comprometido',
+      title: 'Committed Sponsor',
+      price: '$4,000',
       color: 'from-purple-500 to-purple-700',
       bgColor: 'from-purple-500/20 to-purple-700/20',
-      description: 'Compromiso genuino con la causa',
+      description: 'Genuine commitment to the cause',
       features: [
-        'Logo en programa del evento',
-        'Reconocimiento verbal',
-        'Entradas preferenciales',
-        'Material promocional',
-        'Red de contactos'
+        'Logo on main materials',
+        'Mention during the event',
+        '2 preferential seats',
+        'Mention in press releases',
+        'Social media presence',
+        'Promotional materials'
       ]
     },
     {
       id: 'solidario',
       icon: Handshake,
-      title: 'Auspiciador Solidario',
+      title: 'Sponsoring Sponsor',
+      price: '$3,500',
       color: 'from-blue-500 to-blue-700',
       bgColor: 'from-blue-500/20 to-blue-700/20',
-      description: 'Solidaridad empresarial responsable',
+      description: 'Responsible corporate solidarity',
       features: [
-        'Mención en materiales',
-        'Agradecimiento público',
-        'Entradas al evento',
-        'Certificado de apoyo',
-        'Conexiones valiosas'
+        'Logo at the event',
+        'Mention during the event',
+        '2 preferential tickets',
+        'Social media presence',
+        'Promotional materials'
       ]
     }
   ];
@@ -87,16 +78,16 @@ const Sponsorship = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Oportunidades de <span className="text-yellow-400">Auspicio</span>
+            <span className="text-yellow-400">Sponsorship</span> Opportunities
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
-            Únase como aliado estratégico en esta causa que busca transformar vidas 
-            por medio del arte y la conciencia social
+            Join as a strategic ally in this cause that seeks to transform lives 
+            through art and social awareness
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-red-600 mx-auto"></div>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {sponsorshipTiers.map((tier, index) => {
             const Icon = tier.icon;
             
@@ -117,9 +108,15 @@ const Sponsorship = () => {
                       <Icon className="w-8 h-8 text-white" />
                     </div>
                     
-                    <h3 className="text-xl font-bold text-white mb-3 text-center group-hover:text-yellow-400 transition-colors duration-300">
+                    <h3 className="text-xl font-bold text-white mb-2 text-center group-hover:text-yellow-400 transition-colors duration-300">
                       {tier.title}
                     </h3>
+                    
+                    <div className="text-center mb-4">
+                      <span className={`text-2xl font-bold bg-gradient-to-r ${tier.color} bg-clip-text text-transparent`}>
+                        {tier.price}
+                      </span>
+                    </div>
                     
                     <p className="text-gray-400 text-sm mb-6 text-center leading-relaxed">
                       {tier.description}
@@ -140,7 +137,7 @@ const Sponsorship = () => {
                       rel="noopener noreferrer"
                       className={`block w-full bg-gradient-to-r ${tier.color} text-white text-center py-3 px-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg group-hover:shadow-xl`}
                     >
-                      Obtener Paquete
+                      Get Package
                     </a>
                   </div>
                 </div>
@@ -156,28 +153,28 @@ const Sponsorship = () => {
           className="text-center mt-16"
         >
           <div className="bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-white mb-4">Beneficios Adicionales</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">Additional Benefits</h3>
             <div className="grid md:grid-cols-3 gap-6 text-left">
               <div className="text-center">
                 <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-red-600 rounded-full flex items-center justify-center mx-auto mb-3">
                   <Star className="w-6 h-6 text-black" />
                 </div>
-                <h4 className="text-white font-semibold mb-2">Visibilidad de Marca</h4>
-                <p className="text-gray-400 text-sm">Exposición durante y después del evento</p>
+                <h4 className="text-white font-semibold mb-2">Brand Visibility</h4>
+                <p className="text-gray-400 text-sm">Exposure during and after the event</p>
               </div>
               <div className="text-center">
                 <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-3">
                   <Heart className="w-6 h-6 text-white" />
                 </div>
-                <h4 className="text-white font-semibold mb-2">Impacto Social</h4>
-                <p className="text-gray-400 text-sm">Contribución directa a la causa</p>
+                <h4 className="text-white font-semibold mb-2">Social Impact</h4>
+                <p className="text-gray-400 text-sm">Direct contribution to the cause</p>
               </div>
               <div className="text-center">
                 <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-3">
                   <Handshake className="w-6 h-6 text-white" />
                 </div>
                 <h4 className="text-white font-semibold mb-2">Networking</h4>
-                <p className="text-gray-400 text-sm">Conexiones valiosas con líderes</p>
+                <p className="text-gray-400 text-sm">Valuable connections with leaders</p>
               </div>
             </div>
           </div>

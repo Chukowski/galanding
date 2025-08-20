@@ -23,11 +23,11 @@ const Recognition = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            <span className="text-yellow-400">Reconocimiento</span> Especial
+            Special <span className="text-yellow-400">Recognition</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Honrando a las organizaciones que realizan una labor ejemplar 
-            en el tema de la mujer y la violencia de género
+            Honoring organizations that carry out exemplary work 
+            on women's issues and gender-based violence
           </p>
         </motion.div>
 
@@ -48,13 +48,13 @@ const Recognition = () => {
                   <Award className="w-10 h-10 text-black" />
                 </div>
                 <h3 className="text-3xl font-bold text-white mb-4">
-                  Organizaciones Destacadas
+                  Featured Organizations
                 </h3>
                 <p className="text-lg text-gray-300 leading-relaxed">
-                  Durante la gala, se rendirá homenaje a organizaciones que realizan una labor ejemplar 
-                  en el tema de la mujer y la violencia sexual y de género, visibilizando su 
-                  <strong className="text-yellow-400"> impacto social</strong> y su compromiso con la 
-                  <strong className="text-red-400"> justicia y la restauración de vidas</strong>.
+                  During the gala, we will pay tribute to organizations that carry out exemplary work 
+                  on women's issues and sexual and gender-based violence, highlighting their 
+                  <strong className="text-yellow-400"> social impact</strong> and their commitment to 
+                  <strong className="text-red-400"> justice and restoration of lives</strong>.
                 </p>
               </div>
 
@@ -68,10 +68,10 @@ const Recognition = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-700 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Users className="w-8 h-8 text-white" />
                   </div>
-                  <h4 className="text-xl font-bold text-white mb-2">Impacto Comunitario</h4>
+                  <h4 className="text-xl font-bold text-white mb-2">Community Impact</h4>
                   <p className="text-gray-400 text-sm leading-relaxed">
-                    Reconocimiento a organizaciones que trabajan directamente 
-                    con comunidades afectadas por la violencia de género
+                    Recognition of organizations that work directly 
+                    with communities affected by gender-based violence
                   </p>
                 </motion.div>
 
@@ -84,10 +84,10 @@ const Recognition = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-700 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Heart className="w-8 h-8 text-white" />
                   </div>
-                  <h4 className="text-xl font-bold text-white mb-2">Trabajo de Prevención</h4>
+                  <h4 className="text-xl font-bold text-white mb-2">Prevention Work</h4>
                   <p className="text-gray-400 text-sm leading-relaxed">
-                    Honrando iniciativas de educación y prevención 
-                    que trabajan en la raíz del problema
+                    Honoring education and prevention initiatives 
+                    that work at the root of the problem
                   </p>
                 </motion.div>
 
@@ -100,10 +100,10 @@ const Recognition = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Shield className="w-8 h-8 text-white" />
                   </div>
-                  <h4 className="text-xl font-bold text-white mb-2">Apoyo y Restauración</h4>
+                  <h4 className="text-xl font-bold text-white mb-2">Support & Restoration</h4>
                   <p className="text-gray-400 text-sm leading-relaxed">
-                    Celebrando organizaciones que brindan apoyo integral 
-                    y restauración a sobrevivientes
+                    Celebrating organizations that provide comprehensive support 
+                    and restoration to survivors
                   </p>
                 </motion.div>
               </div>
@@ -116,11 +116,11 @@ const Recognition = () => {
               >
                 <div className="bg-gradient-to-r from-yellow-400/10 to-red-400/10 border border-yellow-400/30 rounded-lg p-6">
                   <p className="text-yellow-400 font-semibold text-lg">
-                    ¿Su organización trabaja en justicia de género?
+                    Does your organization work in gender justice?
                   </p>
                   <p className="text-gray-300 mt-2">
-                    Comuníquese con nosotros para conocer los criterios de nominación 
-                    y participar en esta celebración especial.
+                    Contact us to learn about the nomination criteria 
+                    and participate in this special celebration.
                   </p>
                 </div>
               </motion.div>

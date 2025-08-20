@@ -1,16 +1,27 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
-import { Play, Calendar } from 'lucide-react';
+import { Calendar } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen h-screen flex items-center justify-center overflow-hidden">
       {/* Movie Poster Background */}
       <div className="absolute inset-0 z-0">
-        <img
-          src="/assets/logos/Hero1.png"
-          alt="Yo No Me Fui Movie Poster"
-          className="w-full h-full object-cover object-center"
+        {/* Desktop Image */}
+        <div
+          className="hidden md:block w-full h-full bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(/assets/logos/Hero1.png)'
+          }}
+        />
+        {/* Mobile Image */}
+        <div
+          className="block md:hidden w-full h-full bg-no-repeat"
+          style={{
+            backgroundImage: 'url(/assets/logos/Hero2.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center top'
+          }}
         />
         <div className="absolute inset-0 bg-black bg-opacity-70"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
@@ -24,7 +35,7 @@ const Hero = () => {
           transition={{ duration: 1, delay: 0.5 }}
           className="mb-8"
         >
-          <h1 className="text-6xl md:text-8xl font-bold mb-4 tracking-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-4 tracking-tight">
             YO NO ME FUI
           </h1>
           <div className="flex items-center justify-center gap-2 mb-6">
@@ -34,9 +45,9 @@ const Hero = () => {
             </span>
             <div className="w-12 h-0.5 bg-gradient-to-l from-transparent to-yellow-400"></div>
           </div>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-            Un cortometraje sobre la violencia de género<br />
-            <span className="text-yellow-400">Gala Fundraiser & Estreno Oficial</span>
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed px-2">
+            A short film about gender-based violence<br className="hidden sm:block" />
+            <span className="text-yellow-400">Gala Fundraiser & Official Premiere</span>
           </p>
         </motion.div>
 
@@ -44,25 +55,25 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.2 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
+          className="flex flex-col sm:flex-row gap-4 justify-center px-4"
         >
           <a
             href="https://www.zeffy.com/en-US/ticketing/yo-no-me-fui-estreno-oficial-evento-fundraiser"
             target="_blank"
             rel="noopener noreferrer"
-            className="group bg-gradient-to-r from-red-700 to-red-800 hover:from-red-600 hover:to-red-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+            className="group bg-gradient-to-r from-red-700 to-red-800 hover:from-red-600 hover:to-red-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
           >
             <span className="flex items-center justify-center gap-2">
-              <Calendar className="w-5 h-5" />
-              Reservar Mi Lugar
+              <Calendar className="w-4 h-4 sm:w-5 sm:h-5" />
+              Reserve My Seat
             </span>
           </a>
-          <button className="group border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105">
+          {/* <button className="group border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-all duration-300 transform hover:scale-105">
             <span className="flex items-center justify-center gap-2">
-              <Play className="w-5 h-5" />
+              <Play className="w-4 h-4 sm:w-5 sm:h-5" />
               Ver Tráiler
             </span>
-          </button>
+          </button> */}
         </motion.div>
       </div>
 

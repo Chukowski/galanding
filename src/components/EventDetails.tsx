@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Calendar, MapPin, Users, Clock } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 
 const EventDetails = () => {
   const ref = useRef(null);
@@ -10,28 +10,28 @@ const EventDetails = () => {
 
   const eventDetails = [
     {
-      icon: Calendar,
-      title: "Fecha",
-      value: "Próximamente anunciada",
-      description: "Manténgase atento a nuestras actualizaciones"
+      icon: MapPin,
+      title: "Miami",
+      value: "Florida",
+      description: "Magic City venue experience"
     },
     {
       icon: MapPin,
-      title: "Lugar",
-      value: "Miami, Florida",
-      description: "Ubicación exclusiva en el corazón de la ciudad"
+      title: "Orlando",
+      value: "Florida", 
+      description: "City Beautiful premiere location"
     },
     {
-      icon: Users,
-      title: "Vestimenta",
-      value: "Formal / Gala",
-      description: "Una noche elegante y memorable"
+      icon: MapPin,
+      title: "Puerto Rico",
+      value: "Caribbean",
+      description: "Island paradise cultural event"
     },
     {
-      icon: Clock,
-      title: "Formato",
-      value: "Experiencia Completa",
-      description: "Alfombra roja, proyección, cena ligera"
+      icon: MapPin,
+      title: "New York",
+      value: "New York",
+      description: "Big Apple exclusive screening"
     }
   ];
 
@@ -45,10 +45,10 @@ const EventDetails = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Detalles del <span className="text-yellow-400">Evento</span>
+            <span className="text-yellow-400">Event</span> Details
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Una noche cinematográfica con propósito en Miami, FL
+            A cinematic evening with purpose.
           </p>
         </motion.div>
 
@@ -84,28 +84,34 @@ const EventDetails = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-center mt-16"
         >
-          <div className="bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-white mb-4">Programación Especial</h3>
-            <div className="grid md:grid-cols-2 gap-6 text-left">
-              <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                  <span className="text-gray-300">Alfombra roja y recepción</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                  <span className="text-gray-300">Proyección del cortometraje</span>
-                </div>
-              </div>
-              <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-red-400 rounded-full"></div>
-                  <span className="text-gray-300">Palabras de sobrevivientes y líderes</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-red-400 rounded-full"></div>
-                  <span className="text-gray-300">Cena ligera y networking</span>
-                </div>
+          <div className="bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8 max-w-5xl mx-auto">
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">Join us for the official premiere of "YO NO ME FUI": a charity event</h3>
+            
+            <div className="text-left space-y-6">
+              <p className="text-lg text-gray-300 leading-relaxed">
+                Experience an afternoon of purpose with the official premiere of the short film <strong className="text-yellow-400">"YO NO ME FUI,"</strong> presented by AIC Film Production. This inspiring production conveys a powerful message of awareness and prevention, addressing the urgent issue of gender-based violence and the real challenges our communities face.
+              </p>
+              
+              <p className="text-lg text-gray-300 leading-relaxed">
+                Your participation will not only give you exclusive access to this powerful short film but will also support our educational and prevention initiatives.
+              </p>
+              
+              <p className="text-lg text-gray-300 leading-relaxed">
+                A time filled with purpose, networking, and inspiration, while contributing to meaningful change.
+              </p>
+              
+              <div className="text-center mt-8">
+                <p className="text-xl font-semibold text-yellow-400 mb-4">
+                  Reserve your seat or become a sponsor today: make a difference with your presence.
+                </p>
+                <a
+                  href="https://www.zeffy.com/en-US/ticketing/yo-no-me-fui-estreno-oficial-evento-fundraiser"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-gradient-to-r from-yellow-400 to-red-600 text-black px-8 py-3 rounded-lg font-semibold hover:from-yellow-300 hover:to-red-500 transition-all duration-300 transform hover:scale-105"
+                >
+                  Get Your Tickets Now
+                </a>
               </div>
             </div>
           </div>

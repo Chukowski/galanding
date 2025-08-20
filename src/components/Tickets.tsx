@@ -13,32 +13,32 @@ const Tickets = () => {
     {
       id: 'individual',
       icon: User,
-      title: 'Entrada Individual',
-      description: 'Acceso completo a la gala, proyección y programación especial',
+      title: 'General Admission',
+      description: 'Access to the official premiere of the short film YO NO ME FUI, a fundraising event supporting the educational campaign to prevent gender-based violence.',
       features: [
-        'Acceso a alfombra roja',
-        'Proyección del cortometraje',
-        'Cena ligera incluida',
-        'Programa de reconocimientos',
-        'Material conmemorativo'
+        'Access to official premiere',
+        'Afternoon of cinema & inspiration',
+        'Social commitment experience',
+        'Support educational campaign',
+        'Prevention awareness program'
       ],
-      price: 'Consultar',
+      price: '$65',
       popular: false
     },
     {
       id: 'group',
       icon: Users,
-      title: 'Entradas para Grupos',
-      description: 'Para iglesias, organizaciones o grupos de 5+ personas',
+      title: 'General Admission – Group of 10',
+      description: 'Special package for 10 people with access to the official premiere. Experience cinema, inspiration, and social commitment.',
       features: [
-        'Todos los beneficios individuales',
-        'Asientos grupales reservados',
-        'Reconocimiento especial',
-        'Acceso preferencial',
-        'Coordinador dedicado',
-        'Descuento por volumen'
+        'Special package for 10 people',
+        'Access to official premiere',
+        'Cinema & inspiration experience',
+        'Social commitment afternoon',
+        'Educational campaign support',
+        'Group seating arrangement'
       ],
-      price: 'Precio especial',
+      price: '$55 per person',
       popular: true
     }
   ];
@@ -53,10 +53,10 @@ const Tickets = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            <span className="text-yellow-400">Entradas</span> Disponibles
+            <span className="text-yellow-400">Tickets</span> Available
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Asegure su lugar en esta noche transformadora
+            Secure your place at this transformative event
           </p>
         </motion.div>
 
@@ -78,7 +78,7 @@ const Tickets = () => {
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
                     <span className="bg-gradient-to-r from-yellow-400 to-red-600 text-black px-4 py-1 rounded-full text-sm font-bold flex items-center gap-1">
                       <Star className="w-4 h-4" />
-                      Más Popular
+                      Most Popular
                     </span>
                   </div>
                 )}
@@ -112,13 +112,18 @@ const Tickets = () => {
                     ))}
                   </div>
 
-                  <button className={`w-full py-3 rounded-lg font-semibold transition-all duration-300 ${
-                    ticket.popular
-                      ? 'bg-gradient-to-r from-yellow-400 to-red-600 text-black hover:from-yellow-300 hover:to-red-500'
-                      : 'bg-gray-700 text-white hover:bg-gray-600'
-                  } ${isSelected ? 'scale-105' : ''}`}>
-                    Seleccionar
-                  </button>
+                  <a
+                    href="https://www.zeffy.com/en-US/ticketing/yo-no-me-fui-estreno-oficial-evento-fundraiser"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`block w-full py-3 rounded-lg font-semibold transition-all duration-300 text-center ${
+                      ticket.popular
+                        ? 'bg-gradient-to-r from-yellow-400 to-red-600 text-black hover:from-yellow-300 hover:to-red-500'
+                        : 'bg-gray-700 text-white hover:bg-gray-600'
+                    } ${isSelected ? 'scale-105' : ''}`}
+                  >
+                    Get Tickets
+                  </a>
                 </div>
               </motion.div>
             );
@@ -134,11 +139,11 @@ const Tickets = () => {
           <div className="bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 max-w-2xl mx-auto">
             <div className="flex items-center justify-center gap-2 mb-3">
               <Gift className="w-5 h-5 text-yellow-400" />
-              <span className="text-white font-semibold">Nota Importante</span>
+              <span className="text-white font-semibold">Event Information</span>
             </div>
             <p className="text-gray-400 text-sm">
-              Los precios y disponibilidad serán confirmados próximamente. 
-              Complete el formulario para ser notificado cuando las entradas estén disponibles.
+              Join us for an afternoon of cinema, inspiration, and social commitment while supporting 
+              the educational campaign to prevent gender-based violence.
             </p>
           </div>
         </motion.div>

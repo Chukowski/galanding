@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
@@ -23,8 +23,8 @@ const FilmDescription = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Más que un relato,<br />
-              <span className="text-yellow-400">una voz que rompe el silencio</span>
+              More than a story,<br />
+              <span className="text-yellow-400">a voice that breaks the silence</span>
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-red-600 mx-auto mb-8"></div>
           </motion.div>
@@ -37,13 +37,13 @@ const FilmDescription = () => {
               className="space-y-6"
             >
               <p className="text-lg text-gray-300 leading-relaxed">
-                <strong className="text-yellow-400">"Yo No Me Fui"</strong> es una producción audiovisual de alto contenido social, desarrollada por AIC Film Production, la nueva iniciativa de la Academia Internacional de Capellanía.
+                <strong className="text-yellow-400">"Yo No Me Fui"</strong> is a high social content audiovisual production, developed by AIC Film Production, the new initiative of the International Academy of Chaplaincy.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
-                Esta obra está basada en <strong className="text-white">historias reales</strong> relacionadas con la violencia de género, y tiene como objetivo crear impacto social a través de la conciencia, la educación y la prevención.
+                This work is based on <strong className="text-white">real stories</strong> related to gender-based violence, and aims to create social impact through awareness, education and prevention.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
-                Expone las emociones, los ciclos de abuso, las consecuencias invisibles y <strong className="text-red-400">el valor de sobrevivir</strong>. Este cortometraje busca convertirse en una herramienta educativa y de reflexión para comunidades, instituciones y líderes que trabajan por la restauración de las familias y la dignidad humana.
+                It exposes emotions, cycles of abuse, invisible consequences and <strong className="text-red-400">the courage to survive</strong>. This short film seeks to become an educational and reflection tool for communities, institutions and leaders working for the restoration of families and human dignity.
               </p>
             </motion.div>
 
@@ -56,7 +56,7 @@ const FilmDescription = () => {
               <div className="aspect-[2/3] bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg overflow-hidden shadow-2xl max-w-md mx-auto">
                 <img
                   src="/assets/logos/YNMF-Poster 1.png"
-                  alt="Escena del cortometraje"
+                  alt="Short film scene"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>

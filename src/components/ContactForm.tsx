@@ -45,17 +45,17 @@ const ContactForm = () => {
               <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <CheckCircle className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-3xl font-bold text-white mb-4">¡Mensaje Enviado!</h3>
+              <h3 className="text-3xl font-bold text-white mb-4">Message Sent!</h3>
               <p className="text-gray-300 mb-6">
-                Gracias por su interés en "Yo No Me Fui". Nuestro equipo se comunicará 
-                con usted a la brevedad para proporcionarle más detalles sobre el evento 
-                y las opciones disponibles.
+                Thank you for your interest in "Yo No Me Fui". Our team will contact 
+                you shortly to provide more details about the event 
+                and available options.
               </p>
               <button
                 onClick={() => setIsSubmitted(false)}
                 className="bg-gradient-to-r from-yellow-400 to-red-600 text-black px-6 py-3 rounded-lg font-semibold hover:from-yellow-300 hover:to-red-500 transition-all duration-300"
               >
-                Enviar Otro Mensaje
+                Send Another Message
               </button>
             </div>
           </motion.div>
@@ -74,11 +74,11 @@ const ContactForm = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Reservaciones y <span className="text-yellow-400">Auspicio</span>
+            Reservations & <span className="text-yellow-400">Sponsorship</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Complete el formulario para reservar sus entradas o solicitar detalles 
-            sobre las oportunidades de auspicio
+            Complete the form to reserve your tickets or request details 
+            about sponsorship opportunities
           </p>
         </motion.div>
 
@@ -94,7 +94,7 @@ const ContactForm = () => {
                 <div className="space-y-2">
                   <label className="text-white font-semibold flex items-center gap-2">
                     <User className="w-4 h-4 text-yellow-400" />
-                    Nombre Completo *
+                    Full Name *
                   </label>
                   <input
                     type="text"
@@ -103,14 +103,14 @@ const ContactForm = () => {
                     onChange={handleChange}
                     required
                     className="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 focus:outline-none transition-all duration-300"
-                    placeholder="Su nombre completo"
+                    placeholder="Your full name"
                   />
                 </div>
 
                 <div className="space-y-2">
                   <label className="text-white font-semibold flex items-center gap-2">
                     <Mail className="w-4 h-4 text-yellow-400" />
-                    Correo Electrónico *
+                    Email Address *
                   </label>
                   <input
                     type="email"
@@ -128,7 +128,7 @@ const ContactForm = () => {
                 <div className="space-y-2">
                   <label className="text-white font-semibold flex items-center gap-2">
                     <Users className="w-4 h-4 text-yellow-400" />
-                    Tipo de Entrada
+                    Ticket Type
                   </label>
                   <select
                     name="tipoEntrada"
@@ -136,17 +136,17 @@ const ContactForm = () => {
                     onChange={handleChange}
                     className="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 focus:outline-none transition-all duration-300"
                   >
-                    <option value="">Seleccione una opción</option>
-                    <option value="individual">Entrada Individual</option>
-                    <option value="grupo">Entrada para Grupos (5+)</option>
-                    <option value="consultar">Necesito más información</option>
+                    <option value="">Select an option</option>
+                    <option value="individual">General Admission ($65)</option>
+                    <option value="grupo">Group of 10 ($55 per person)</option>
+                    <option value="consultar">I need more information</option>
                   </select>
                 </div>
 
                 <div className="space-y-2">
                   <label className="text-white font-semibold flex items-center gap-2">
                     <Heart className="w-4 h-4 text-yellow-400" />
-                    Interés en Auspicio
+                    Sponsorship Interest
                   </label>
                   <select
                     name="interesAuspicio"
@@ -154,19 +154,18 @@ const ContactForm = () => {
                     onChange={handleChange}
                     className="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 focus:outline-none transition-all duration-300"
                   >
-                    <option value="">Seleccione una opción</option>
-                    <option value="visionario">Auspiciador Visionario</option>
-                    <option value="transformacional">Auspiciador Transformador</option>
-                    <option value="comprometido">Auspiciador Comprometido</option>
-                    <option value="solidario">Auspiciador Solidario</option>
-                    <option value="no-interesado">No estoy interesado</option>
+                    <option value="">Select an option</option>
+                    <option value="transformacional">Transformative Sponsor ($4,500)</option>
+                    <option value="comprometido">Committed Sponsor ($4,000)</option>
+                    <option value="solidario">Sponsoring Sponsor ($3,500)</option>
+                    <option value="no-interesado">Not interested</option>
                   </select>
                 </div>
               </div>
 
               <div className="space-y-2">
                 <label className="text-white font-semibold">
-                  Mensaje Adicional
+                  Additional Message
                 </label>
                 <textarea
                   name="mensaje"
@@ -174,7 +173,7 @@ const ContactForm = () => {
                   onChange={handleChange}
                   rows={4}
                   className="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 focus:outline-none transition-all duration-300 resize-none"
-                  placeholder="Cuéntenos más sobre su interés o preguntas específicas..."
+                  placeholder="Tell us more about your interest or specific questions..."
                 ></textarea>
               </div>
 
@@ -184,7 +183,7 @@ const ContactForm = () => {
                   className="group bg-gradient-to-r from-yellow-400 to-red-600 text-black px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center gap-3 mx-auto"
                 >
                   <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                  Enviar Solicitud
+                  Send Request
                 </button>
               </div>
             </form>
