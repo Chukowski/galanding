@@ -1,6 +1,5 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook, Instagram } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -14,7 +13,7 @@ const Footer = () => {
             transition={{ duration: 0.6 }}
             className="md:col-span-2"
           >
-            <h3 className="text-2xl font-bold text-white mb-4">YO NO ME FUI</h3>
+            <h3 className="text-2xl font-bold text-white mb-4"><span className="notranslate">YO NO ME FUI</span></h3>
             <p className="text-gray-400 mb-6 leading-relaxed">
               An AIC Film Production that seeks to create social impact 
               through awareness, education and prevention of gender-based violence.

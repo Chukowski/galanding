@@ -36,7 +36,7 @@ const Hero = () => {
           className="mb-8"
         >
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-4 tracking-tight">
-            YO NO ME FUI
+            <span className="notranslate">YO NO ME FUI</span>
           </h1>
           <div className="flex items-center justify-center gap-2 mb-6">
             <div className="w-12 h-0.5 bg-gradient-to-r from-transparent to-yellow-400"></div>

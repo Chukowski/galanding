@@ -14,7 +14,7 @@ const Tickets = () => {
       id: 'individual',
       icon: User,
       title: 'General Admission',
-      description: 'Access to the official premiere of the short film YO NO ME FUI, a fundraising event supporting the educational campaign to prevent gender-based violence.',
+      description: 'Access to the official premiere of the short film "YO NO ME FUI", a fundraising event supporting the educational campaign to prevent gender-based violence.',
       features: [
         'Access to official premiere',
         'Afternoon of cinema & inspiration',
@@ -99,7 +99,9 @@ const Tickets = () => {
                     </div>
                     
                     <h3 className="text-2xl font-bold text-white mb-2">{ticket.title}</h3>
-                    <p className="text-gray-400 mb-4">{ticket.description}</p>
+                    <p className="text-gray-400 mb-4" dangerouslySetInnerHTML={{
+                      __html: ticket.description.replace(/"YO NO ME FUI"/g, '<span class="notranslate">"YO NO ME FUI"</span>')
+                    }}></p>
                     <div className="text-3xl font-bold text-yellow-400">{ticket.price}</div>
                   </div>
 
