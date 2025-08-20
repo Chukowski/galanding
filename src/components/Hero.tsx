@@ -47,7 +47,7 @@ const Hero = () => {
           </div>
           <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed px-2">
             A short film about gender-based violence<br className="hidden sm:block" />
-            <span className="text-yellow-400">Gala Fundraiser & Official Premiere</span>
+            <span className="text-yellow-400">Event Fundraiser & Official Premiere</span>
           </p>
         </motion.div>
 

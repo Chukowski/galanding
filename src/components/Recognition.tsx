@@ -51,7 +51,7 @@ const Recognition = () => {
                   Featured Organizations
                 </h3>
                 <p className="text-lg text-gray-300 leading-relaxed">
-                  During the gala, we will pay tribute to organizations that carry out exemplary work 
+                  During the event, we will pay tribute to organizations that carry out exemplary work 
                   on women's issues and sexual and gender-based violence, highlighting their 
                   <strong className="text-yellow-400"> social impact</strong> and their commitment to 
                   <strong className="text-red-400"> justice and restoration of lives</strong>.
