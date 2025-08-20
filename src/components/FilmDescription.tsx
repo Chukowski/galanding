@@ -55,7 +55,7 @@ const FilmDescription = () => {
             >
               <div className="aspect-[2/3] bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg overflow-hidden shadow-2xl max-w-md mx-auto">
                 <img
-                  src="/src/assets/logos/YNMF-Poster 1.png"
+                  src="/assets/logos/YNMF-Poster 1.png"
                   alt="Escena del cortometraje"
                   className="w-full h-full object-cover"
                 />

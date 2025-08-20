@@ -8,7 +8,7 @@ const Hero = () => {
       {/* Movie Poster Background */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/src/assets/logos/Hero1.png"
+          src="/assets/logos/Hero1.png"
           alt="Yo No Me Fui Movie Poster"
           className="w-full h-full object-cover object-center"
         />
