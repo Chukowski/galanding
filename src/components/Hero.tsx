@@ -75,6 +75,33 @@ const Hero = () => {
             </span>
           </button> */}
         </motion.div>
+
+        {/* Teaser Video */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.5 }}
+          className="mt-12 max-w-2xl mx-auto px-4"
+        >
+          <div className="relative rounded-lg overflow-hidden shadow-2xl">
+            <div style={{ padding: '52.73% 0 0 0', position: 'relative' }}>
+              <iframe
+                src="https://player.vimeo.com/video/1117259329?badge=0&autopause=0&player_id=0&app_id=58479"
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%'
+                }}
+                title="Teaser YO NO ME FUI"
+              />
+            </div>
+          </div>
+        </motion.div>
       </div>
 
       {/* Scroll Indicator */}
