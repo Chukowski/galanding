@@ -15,13 +15,42 @@ const ContactForm = () => {
     mensaje: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitted(true);
-    }, 1000);
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch('https://n8n.akitapr.com/webhook/yonomefui', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        // Reset form data
+        setFormData({
+          nombre: '',
+          email: '',
+          tipoEntrada: '',
+          interesAuspicio: '',
+          mensaje: ''
+        });
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (err) {
+      setError('There was an error sending your message. Please try again.');
+      console.error('Form submission error:', err);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -52,7 +81,10 @@ const ContactForm = () => {
                 and available options.
               </p>
               <button
-                onClick={() => setIsSubmitted(false)}
+                onClick={() => {
+                  setIsSubmitted(false);
+                  setError(null);
+                }}
                 className="bg-gradient-to-r from-yellow-400 to-red-600 text-black px-6 py-3 rounded-lg font-semibold hover:from-yellow-300 hover:to-red-500 transition-all duration-300"
               >
                 Send Another Message
@@ -137,8 +169,6 @@ const ContactForm = () => {
                     className="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 focus:outline-none transition-all duration-300"
                   >
                     <option value="">Select an option</option>
-                    <option value="individual">General Admission ($65)</option>
-                    <option value="grupo">Group of 10 ($55 per person)</option>
                     <option value="consultar">I need more information</option>
                   </select>
                 </div>
@@ -177,13 +207,24 @@ const ContactForm = () => {
                 ></textarea>
               </div>
 
+              {error && (
+                <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-4 mb-6">
+                  <p className="text-red-400 text-center">{error}</p>
+                </div>
+              )}
+
               <div className="text-center">
                 <button
                   type="submit"
-                  className="group bg-gradient-to-r from-yellow-400 to-red-600 text-black px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center gap-3 mx-auto"
+                  disabled={isLoading}
+                  className={`group bg-gradient-to-r from-yellow-400 to-red-600 text-black px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center gap-3 mx-auto ${
+                    isLoading ? 'opacity-70 cursor-not-allowed' : ''
+                  }`}
                 >
-                  <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                  Send Request
+                  <Send className={`w-5 h-5 transition-transform duration-300 ${
+                    isLoading ? 'animate-pulse' : 'group-hover:translate-x-1'
+                  }`} />
+                  {isLoading ? 'Sending...' : 'Send Request'}
                 </button>
               </div>
             </form>
