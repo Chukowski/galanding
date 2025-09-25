@@ -60,7 +60,8 @@ const Tickets = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        {/* Ticket options temporarily hidden */}
+        <div className="hidden">
           {ticketOptions.map((ticket, index) => {
             const Icon = ticket.icon;
             const isSelected = selectedTicket === ticket.id;
