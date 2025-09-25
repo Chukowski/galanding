@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Send, CheckCircle, User, Mail, Users, Heart } from 'lucide-react';
+import { Send, CheckCircle, User, Mail, Users } from 'lucide-react';
 
 const ContactForm = () => {
   const ref = useRef(null);
@@ -11,7 +11,6 @@ const ContactForm = () => {
     nombre: '',
     email: '',
     tipoEntrada: '',
-    interesAuspicio: '',
     mensaje: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -39,7 +38,6 @@ const ContactForm = () => {
           nombre: '',
           email: '',
           tipoEntrada: '',
-          interesAuspicio: '',
           mensaje: ''
         });
       } else {
@@ -106,11 +104,10 @@ const ContactForm = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Reservations & <span className="text-yellow-400">Sponsorship</span>
+            Contact & <span className="text-yellow-400">Information</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Complete the form to reserve your tickets or request details 
-            about sponsorship opportunities
+            Complete the form to get more information about the event
           </p>
         </motion.div>
 
@@ -156,41 +153,20 @@ const ContactForm = () => {
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-white font-semibold flex items-center gap-2">
-                    <Users className="w-4 h-4 text-yellow-400" />
-                    Ticket Type
-                  </label>
-                  <select
-                    name="tipoEntrada"
-                    value={formData.tipoEntrada}
-                    onChange={handleChange}
-                    className="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 focus:outline-none transition-all duration-300"
-                  >
-                    <option value="">Select an option</option>
-                    <option value="consultar">I need more information</option>
-                  </select>
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-white font-semibold flex items-center gap-2">
-                    <Heart className="w-4 h-4 text-yellow-400" />
-                    Sponsorship Interest
-                  </label>
-                  <select
-                    name="interesAuspicio"
-                    value={formData.interesAuspicio}
-                    onChange={handleChange}
-                    className="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 focus:outline-none transition-all duration-300"
-                  >
-                    <option value="">Select an option</option>
-                    <option value="transformacional">Transformative Sponsor ($4,500)</option>
-                    <option value="comprometido">Committed Sponsor ($4,000)</option>
-                    <option value="solidario">Sponsoring Sponsor ($3,500)</option>
-                    <option value="no-interesado">Not interested</option>
-                  </select>
-                </div>
+              <div className="space-y-2">
+                <label className="text-white font-semibold flex items-center gap-2">
+                  <Users className="w-4 h-4 text-yellow-400" />
+                  Inquiry Type
+                </label>
+                <select
+                  name="tipoEntrada"
+                  value={formData.tipoEntrada}
+                  onChange={handleChange}
+                  className="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 focus:outline-none transition-all duration-300"
+                >
+                  <option value="">Select an option</option>
+                  <option value="consultar">I need more information</option>
+                </select>
               </div>
 
               <div className="space-y-2">

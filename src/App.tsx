@@ -3,7 +3,6 @@ import Hero from './components/Hero';
 import FilmDescription from './components/FilmDescription';
 import EventDetails from './components/EventDetails';
 import Tickets from './components/Tickets';
-import Sponsorship from './components/Sponsorship';
 import Recognition from './components/Recognition';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
@@ -15,7 +14,6 @@ function App() {
       <FilmDescription />
       <EventDetails />
       <Tickets />
-      <Sponsorship />
       <Recognition />
       <ContactForm />
       <Footer />
